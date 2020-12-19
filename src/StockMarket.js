@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Plotly from 'plotly.js-basic-dist';
 import createPlotlyComponent from 'react-plotly.js/factory';
 import Axios from 'axios';
+import { MY_API_KEY } from './constant';
 const Plot = createPlotlyComponent(Plotly);
 
 const StockMarket = () => {
@@ -16,7 +17,7 @@ const StockMarket = () => {
     const fetchStock = async () => {
         // const pointerToThis = this;
         // console.log(pointerToThis);
-        const API_KEY = 'PGXVKI89J9D2XW5Q';
+        const API_KEY = MY_API_KEY
         let StockSymbol = 'FB';
         let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
         let stockChartXValuesFunction = [];
